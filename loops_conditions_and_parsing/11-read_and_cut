@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# displays the username, user id, and home directory path for the user from /etc/passwd
-
-while read -r x; do
-	echo "$x" | cut -d ':' -f 1,3,6
+#comment
+while IFS= read -r line; do
+    username=$(echo "$line" | cut -d: -f1)
+    uid=$(echo "$line" | cut -d: -f3)
+    home_dir=$(echo "$line" | cut -d: -f6)
+    echo "$username:$uid:$home_dir"
 done < /etc/passwd
