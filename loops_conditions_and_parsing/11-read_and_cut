@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # #!/usr/bin/env bash
-#comment
+#grrr
 while IFS= read -r line; do
     username=$(echo "$line" | cut -d: -f1)
     uid=$(echo "$line" | cut -d: -f3)
